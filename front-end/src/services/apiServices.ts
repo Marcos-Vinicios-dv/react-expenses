@@ -55,11 +55,13 @@ export const apiSignIn = async (
     email,
     senha,
   });
-  return api.post('/sessao/criar', data, {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
+  return api
+    .post('/sessao/criar', data, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    .then(res => res.data);
 };
 
 export const apiGetUsers = async (): Promise<IUser> => {

@@ -2,7 +2,7 @@ import { Box, Button } from '@material-ui/core';
 import { apiSignOut } from '../services/apiServices';
 import { makeStyles } from '@material-ui/core/styles';
 import { userContext } from '../contexts/userContext';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 
 const useStyles = makeStyles({
   button: {
@@ -11,10 +11,9 @@ const useStyles = makeStyles({
   },
 });
 
-const Header = () => {
+const Header = React.memo(() => {
   const classes = useStyles();
   const { user, onSignOut } = useContext(userContext);
-
   function handleSignOut() {
     apiSignOut();
     onSignOut();
@@ -50,6 +49,6 @@ const Header = () => {
       </Box>
     </Box>
   );
-};
+});
 
 export default Header;

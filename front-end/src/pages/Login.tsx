@@ -1,6 +1,6 @@
 import { Container, Box, Button, TextField } from '@material-ui/core';
 import React, { useState } from 'react';
-import { apiGetUsers, apiSignIn } from '../services/apiServices';
+import { apiSignIn } from '../services/apiServices';
 
 interface ILoginProps {
   onSignIn: (user: string) => void;
@@ -13,10 +13,12 @@ const Login = (props: ILoginProps) => {
 
   async function signIn(evt: React.FormEvent) {
     evt.preventDefault();
-    await apiSignIn(email, password).then(null, e => {
-      setError('Email não encontrado ou senha incorreta!');
-    });
-    props.onSignIn((await apiGetUsers()).nome);
+    await apiSignIn(email, password).then(
+      res => props.onSignIn(res.nome),
+      e => {
+        setError('Email não encontrado ou senha incorreta!');
+      }
+    );
   }
 
   return (

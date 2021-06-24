@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,9 +8,19 @@ import {
 import HomeApp from './pages/HomeApp';
 import Login from './pages/Login';
 import { userContext } from './contexts/userContext';
+import { apiGetUsers } from './services/apiServices';
 
 function App() {
   const [user, setUser] = useState<string | null>('');
+
+  useEffect(() => {
+    apiGetUsers().then(
+      res => setUser(res.nome),
+      e => {
+        onSignOut();
+      }
+    );
+  }, []);
 
   function onSignOut() {
     setUser(null);

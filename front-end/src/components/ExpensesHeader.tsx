@@ -3,7 +3,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import { Box } from '@material-ui/core';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { apiGetYear, IYears } from '../services/apiServices';
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
@@ -28,7 +28,7 @@ interface IExpensesHeaderProps {
   total: number;
 }
 
-const ExpensesHeader = (props: IExpensesHeaderProps) => {
+const ExpensesHeader = React.memo((props: IExpensesHeaderProps) => {
   const { total } = props;
   const [years, setYears] = useState<IYears[]>([]);
   const [valueYear, setValueYear] = useState<string>('2021');
@@ -95,6 +95,6 @@ const ExpensesHeader = (props: IExpensesHeaderProps) => {
       </Box>
     </Box>
   );
-};
+});
 
 export default ExpensesHeader;
