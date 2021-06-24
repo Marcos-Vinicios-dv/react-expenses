@@ -1,5 +1,5 @@
 # react-expenses-typescript
-Trabalho prático bootcamp IGTI, v1.0 sem estilização.
+Trabalho prático bootcamp IGTI, v1.1 sem estilização.
 
 # Iniciar Back-end
 -Para inicializar o back-end basta abrir a pasta no terminal copiar o seguinte comando e pressionar Enter:
