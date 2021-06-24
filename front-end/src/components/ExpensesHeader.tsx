@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { apiGetYear, IYears } from '../services/apiServices';
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import { formatValue } from '../utils/formatValue';
 
 const MONTHS = [
   'Janeiro',
@@ -24,7 +25,7 @@ const MONTHS = [
 ];
 
 interface IExpensesHeaderProps {
-  total: string;
+  total: number;
 }
 
 const ExpensesHeader = (props: IExpensesHeaderProps) => {
@@ -48,14 +49,13 @@ const ExpensesHeader = (props: IExpensesHeaderProps) => {
       display="flex"
       alignItems="center"
       justifyContent="space-between"
-      padding="10px"
-      style={{ backgroundColor: '#EB786E' }}
+      padding="16px"
+      maxWidth="90%"
+      margin="0 auto"
     >
-      <Box display="flex" alignItems="center" minWidth="400px">
+      <Box display="flex" alignItems="center" minWidth="300px">
         <FormControl fullWidth>
-          <InputLabel id="select-ano" style={{ color: 'white' }}>
-            Ano
-          </InputLabel>
+          <InputLabel id="select-ano">Ano</InputLabel>
           <Select
             labelId="select-ano"
             value={valueYear}
@@ -72,9 +72,7 @@ const ExpensesHeader = (props: IExpensesHeaderProps) => {
           </Select>
         </FormControl>
         <FormControl fullWidth style={{ marginLeft: '10px' }}>
-          <InputLabel id="select-mes" style={{ color: 'white' }}>
-            Mês
-          </InputLabel>
+          <InputLabel id="select-mes">Mês</InputLabel>
           <Select
             labelId="select-mes"
             value={valueMonth}
@@ -91,9 +89,9 @@ const ExpensesHeader = (props: IExpensesHeaderProps) => {
           </Select>
         </FormControl>
       </Box>
-      <Box component="span" color="#fff">
+      <Box component="span">
         <strong>Despesas Total: </strong>
-        {total}
+        {formatValue(total)}
       </Box>
     </Box>
   );

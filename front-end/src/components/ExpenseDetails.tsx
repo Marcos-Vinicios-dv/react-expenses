@@ -5,10 +5,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import { useEffect, useState } from 'react';
-import { apiGetExpenses, IExpenses } from '../services/apiServices';
-import { formatValue } from '../utils/formatValue';
-import { useParams } from 'react-router-dom';
+import { IExpenses } from '../services/apiServices';
 
 const useStyles = makeStyles({
   table: {
@@ -18,30 +15,12 @@ const useStyles = makeStyles({
 });
 
 interface IExpensesTableProps {
-  setTotal: (total: string) => void;
+  expenses: IExpenses[];
 }
 
-const ExpensesTable = (props: IExpensesTableProps) => {
-  const { setTotal } = props;
-  const { date } = useParams<{ date: string }>();
+const ExpenseDetails = (props: IExpensesTableProps) => {
+  const { expenses } = props;
   const classes = useStyles();
-  const [expenses, setExpenses] = useState<IExpenses[]>([]);
-
-  useEffect(() => {
-    async function loadExpenses() {
-      const [currentYear, currentMonth] = date.split('-');
-      const allExpenses = await apiGetExpenses(currentYear, currentMonth);
-
-      let total: number = 0;
-
-      allExpenses.forEach(e => (total += e.valor));
-
-      setTotal(formatValue(total));
-
-      setExpenses(allExpenses);
-    }
-    loadExpenses();
-  }, [date, setTotal]);
 
   return (
     <TableContainer component="div">
@@ -69,4 +48,4 @@ const ExpensesTable = (props: IExpensesTableProps) => {
   );
 };
 
-export default ExpensesTable;
+export default ExpenseDetails;
