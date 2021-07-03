@@ -6,8 +6,30 @@ import React, { useContext } from 'react';
 
 const useStyles = makeStyles({
   button: {
+    paddingLeft: '15px',
     border: '1px solid rgb(224,224,224)',
     color: 'white',
+  },
+  headerContainer: {
+    width: '100%',
+    height: '70px',
+    marginBottom: '16px',
+    display: 'flex',
+    alignItems: 'center',
+    backgroundColor: '#EB786E',
+    '& strong': {
+      color: 'white',
+      fontSize: '1.5rem',
+      flex: '1',
+      marginLeft: '24px',
+    },
+  },
+  userArea: {
+    marginRight: '24px',
+    color: 'white',
+    '& span': {
+      marginRight: '8px',
+    },
   },
 });
 
@@ -19,26 +41,10 @@ const Header = React.memo(() => {
     onSignOut();
   }
   return (
-    <Box
-      width="100%"
-      height="70px"
-      marginBottom="16px"
-      display="flex"
-      alignItems="center"
-      style={{ backgroundColor: '#EB786E' }}
-    >
-      <strong
-        style={{
-          color: 'white',
-          fontSize: '1.5rem',
-          flex: '1',
-          marginLeft: '24px',
-        }}
-      >
-        DESPESAS
-      </strong>
-      <Box component="span" marginRight="24px" color="white">
-        <span style={{ marginRight: '8px' }}>Olá! {user}</span>
+    <Box className={classes.headerContainer}>
+      <strong>DESPESAS</strong>
+      <Box component="span" className={classes.userArea}>
+        <span>Olá! {user}</span>
         <Button
           type="button"
           onClick={handleSignOut}

@@ -8,6 +8,7 @@ import { apiGetYear, IYears } from '../services/apiServices';
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { formatValue } from '../utils/formatValue';
+import { makeStyles } from '@material-ui/core/styles';
 
 const MONTHS = [
   'Janeiro',
@@ -28,8 +29,20 @@ interface IExpensesHeaderProps {
   total: number;
 }
 
+const useStyles = makeStyles({
+  header: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: '16px',
+    maxWidth: '90%',
+    margin: '0 auto',
+  },
+});
+
 const ExpensesHeader = React.memo((props: IExpensesHeaderProps) => {
   const { total } = props;
+  const classes = useStyles();
   const [years, setYears] = useState<IYears[]>([]);
   const [valueYear, setValueYear] = useState<string>('2021');
   const [valueMonth, setValueMonth] = useState<string>('01');
@@ -45,14 +58,7 @@ const ExpensesHeader = React.memo((props: IExpensesHeaderProps) => {
   }, []);
 
   return (
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="space-between"
-      padding="16px"
-      maxWidth="90%"
-      margin="0 auto"
-    >
+    <Box className={classes.header}>
       <Box display="flex" alignItems="center" minWidth="300px">
         <FormControl fullWidth>
           <InputLabel id="select-ano">Ano</InputLabel>
