@@ -5,7 +5,7 @@
 ### Imagem da aplicação:
 <img width="100%" src="https://marcos-dev-portfolio.netlify.app/static/media/ReactExpenses.02762746.png" alt="Página Resumo"></img>
 
-### Tecnologias e bibliotecas utilizadas:
+### Tecnologias utilizadas:
 
 <b>Linguagem</b>
 - Typescript(React).
