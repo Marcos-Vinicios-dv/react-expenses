@@ -16,27 +16,29 @@
 - <a href="https://axios-http.com/docs/intro" >axios</a> (requisições a api);
 - <a href="https://github.com/typicode/json-server" >json-server</a> (fake API);
 - <a href="https://reactrouter.com/web/guides/quick-start" >react-router-dom</a> (navegação);
+- <a href="https://reactrouter.com/web/guides/quick-start" >react-router-dom</a> (navegação);
+
 
 ## Inicializar projeto
 
 <p>Para inicializar esse projeto em sua máquina será necessário usar os seguinte comandos(como o node instalado):</p>
 
 # Iniciar Back-end
--Para inicializar o back-end basta abrir a pasta no terminal copiar o seguinte comando e pressionar Enter:
-<br>
+Instalar depêndencias 
+
 ```npm install```
 <br>
-<br>
--Após as instalação dos pacotes, copie o seguinte comando e pronto, backend funcionando:
+
+Iniciar server localmente 
 <br>
 ```npm start```
 
 # Iniciar Front-end
--Para inicializar o front-end basta fazer a instalação de pacotes com o comando:
-<br>
+Instalar depêndencias 
+
 ```npm install```
 <br>
-<br>
--Agora basta inicializar o projeto com o comando:
+
+Inicializar aplicação localmente
 <br>
 ```npm start```
