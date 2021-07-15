@@ -25,20 +25,14 @@
 
 # Iniciar Back-end
 Instalar depêndencias 
-
 ```npm install```
 
-
 Iniciar server localmente 
-
 ```npm start```
 
 # Iniciar Front-end
 Instalar depêndencias 
-
 ```npm install```
 
-
 Inicializar aplicação localmente
-
 ```npm start```
