@@ -23,7 +23,7 @@
 
 <p>Para inicializar esse projeto em sua máquina será necessário usar os seguinte comandos(como o node instalado):</p>
 
-<b>Iniciar Back-end</b>
+- Iniciar Back-end
 <br>
 Instalar depêndencias 
 ```npm install```
@@ -31,7 +31,7 @@ Instalar depêndencias
 Iniciar server localmente 
 ```npm start```
 
-<b>Iniciar Front-end</b>
+- Iniciar Front-end
 <br>
 Instalar depêndencias 
 ```npm install```
