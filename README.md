@@ -26,6 +26,7 @@
 <br>
 ```npm install```
 <br>
+<br>
 -Após as instalação dos pacotes, copie o seguinte comando e pronto, backend funcionando:
 <br>
 ```npm start```
@@ -34,6 +35,7 @@
 -Para inicializar o front-end basta fazer a instalação de pacotes com o comando:
 <br>
 ```npm install```
+<br>
 <br>
 -Agora basta inicializar o projeto com o comando:
 <br>
