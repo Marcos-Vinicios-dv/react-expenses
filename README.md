@@ -3,7 +3,7 @@
 <p>Trata-se de um app desenvolvido como trabalho prático do bootcamp IGTI, nessa aplicação uma tabela é preenchida com informações de uma fake API e filtradas por ano e mês.</p>
 
 ### Imagem da aplicação:
-<img width="100%" src="https://marcos-dev-portfolio.netlify.app/static/media/ReactExpenses.02762746.png" alt="Página Resumo"></img>
+<img width="100%" src="https://ik.imagekit.io/6s2mndhy9tk/ReactExpenses.02762746_XLLVRmvpEbu.png" alt="Página Resumo"></img>
 
 ### Tecnologias utilizadas:
 
